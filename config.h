@@ -78,33 +78,33 @@ static const char *ranger[]    = { "st", "-e", "ranger", NULL };
 static const char *nvim[]      = { "st", "-e", "nvim", NULL };
 static const char *music[]     = { "electron-netease-cloud-music", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
-static const char *upvol[]     = { "/home/matteo/scripts/vol-up.sh", NULL };
-static const char *downvol[]   = { "/home/matteo/scripts/vol-down.sh", NULL };
-static const char *mutevol[]   = { "/home/matteo/scripts/vol-toggle.sh", NULL };
+static const char *upvol[]     = { "/home/doublethink/scripts/vol-up.sh", NULL };
+static const char *downvol[]   = { "/home/doublethink/scripts/vol-down.sh", NULL };
+static const char *mutevol[]   = { "/home/doublethink/scripts/vol-toggle.sh", NULL };
 static const char *rofirun[]   = { "rofi", "-show", "run", NULL };
 static const char *rofiapp[]   = { "rofi", "-show", "drun", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_a,      spawn,          {.v = rofiapp} },
-	{ MODKEY,                       XK_d,      spawn,          {.v = rofirun} },
+	{ MODKEY,                       XK_r,      spawn,          {.v = rofirun} },
 	{ MODKEY,           			XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,           			XK_g,	   spawn,          {.v = chromium } },
-	{ MODKEY,						XK_r,	   spawn,          {.v = ranger } },
+	{ MODKEY,						XK_e,	   spawn,          {.v = ranger } },
 	{ MODKEY,						XK_n,	   spawn,          {.v = nvim } },
-	{ MODKEY,						XK_e,	   spawn,          {.v = music } },
+	/* { MODKEY,						XK_m,	   spawn,          {.v = music } }, */
 	{ MODKEY,						XK_F1,	   spawn,          {.v = flameshot } },
-	{ MODKEY,						XK_F12,	   spawn,          {.v = upvol } },
-	{ MODKEY,						XK_F11,	   spawn,          {.v = downvol } },
+	{ MODKEY,						XK_F11,	   spawn,          {.v = upvol } },
+	{ MODKEY,						XK_F10,	   spawn,          {.v = downvol } },
 	{ MODKEY,						XK_F9,	   spawn,          {.v = mutevol } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_i,      rotatestack,    {.i = -1 } },
+	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_i,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_l,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
